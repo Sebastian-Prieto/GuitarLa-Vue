@@ -16,7 +16,7 @@
                         <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" class="bg-white p-3">
-                            <p class="text-center">El carrito esta vacio</p>
+                            <p class="text-center">El carrito está vacio</p>
                             <table class="w-100 table">
                                 <thead>
                                     <tr>
