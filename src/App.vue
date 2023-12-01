@@ -13,13 +13,18 @@ onMounted(() => {
 })
 
 const agregarCarrito = (guitarra) => {
-    guitarra.cantidad = 1;
-    carrito.value.push(guitarra) // Push añade un elemento a un arreglo al final - Modifica el arreglo original ☢️
+    const existeCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
+    if (existeCarrito >= 0) {
+        carrito.value[existeCarrito].cantidad++
+    } else {
+        guitarra.cantidad = 1;
+        carrito.value.push(guitarra) // Push añade un elemento a un arreglo al final - Modifica el arreglo original ☢️
+    }
 }
 </script>
     
 <template>
-    <Header />
+    <Header :carrito="carrito" />
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
 
